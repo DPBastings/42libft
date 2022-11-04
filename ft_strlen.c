@@ -6,7 +6,7 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 15:15:54 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/07 15:56:15 by dbasting      ########   odam.nl         */
+/*   Updated: 2022/11/04 13:16:57 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	index;
 
+	if (s == NULL)
+		return (0);
 	index = 0;
 	while (s[index])
 		index++;
