@@ -6,7 +6,7 @@
 #    By: dbasting <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 15:45:11 by dbasting      #+#    #+#                  #
-#    Updated: 2022/12/28 13:50:17 by dbasting      ########   odam.nl          #
+#    Updated: 2022/12/28 13:55:22 by dbasting      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,15 @@ SRC_FILES := ft_atoi.c\
 	ft_isdigit.c\
 	ft_isprint.c\
 	ft_itoa.c\
+	ft_lstadd_back.c\
+	ft_lstadd_front.c\
+	ft_lstclear.c\
+	ft_lstdelone.c\
+	ft_lstiter.c \
+	ft_lstlast.c\
+	ft_lstmap.c\
+	ft_lstnew.c\
+	ft_lstsize.c\
 	ft_memchr.c\
 	ft_memcmp.c\
    	ft_memcpy.c\
@@ -47,20 +56,10 @@ SRC_FILES := ft_atoi.c\
 	ft_tolower.c\
 	ft_toupper.c
 OBJ_FILES := $(SRC_FILES:.c=.o)
-BONUS_SRC_FILES := ft_lstadd_back.c\
-	ft_lstadd_front.c\
-	ft_lstclear.c\
-	ft_lstdelone.c\
-	ft_lstiter.c \
-	ft_lstlast.c\
-	ft_lstmap.c\
-	ft_lstnew.c\
-	ft_lstsize.c
-BONUS_OBJ_FILES := $(BONUS_SRC_FILES:.c=.o)
 
-SRC_DIR := ./source
-OBJ_DIR := ./object
-HDR_DIR := ./header
+SRC_DIR := ./source/
+OBJ_DIR := ./object/
+HDR_DIR := ./header/
 
 CFLAGS ?= -Wall -Wextra -Werror
 AFLAGS ?= -rcu
@@ -68,13 +67,14 @@ AFLAGS ?= -rcu
 
 all: $(NAME)
 
-bonus: $(BONUS_OBJ_FILES)
-	@ar $(AFLAGS) $(NAME) $^
+bonus: all
+	@echo "Bonus is basis, vrind."
 
 $(NAME): $(addprefix $(OBJ_DIR),$(OBJ_FILES))
 	@ar $(AFLAGS) $@ $^
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(addprefix $(HDR_DIR),$(HDR_FILES))
+	@mkdir -p $(OBJ_DIR)
 	@$(CC) $(CFLAGS) -I$(HDR_DIR) $< -c -o $@
 
 clean:
