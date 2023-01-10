@@ -59,7 +59,7 @@ OBJ_FILES := $(SRC_FILES:.c=.o)
 
 SRC_DIR := ./source/
 OBJ_DIR := ./object/
-HDR_DIR := ./header/
+HDR_DIR := ./include/
 
 CFLAGS ?= -Wall -Wextra -Werror
 AFLAGS ?= -rcu
