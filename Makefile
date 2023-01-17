@@ -54,15 +54,20 @@ SRC_FILES := ft_atoi.c\
 	ft_strtrim.c\
    	ft_substr.c\
 	ft_tolower.c\
-	ft_toupper.c
+	ft_toupper.c\
+	\
+	gnl.c\
+	gnl_utils.c
 OBJ_FILES := $(SRC_FILES:.c=.o)
 
 SRC_DIR := ./source/
 OBJ_DIR := ./object/
-HDR_DIR := ./include/
+HDR_DIR := ./header/
+INC_DIR := ./include/
 
-CFLAGS ?= -Wall -Wextra -Werror
-AFLAGS ?= -rcu
+CFLAGS ?= -Wall -Wextra -Werror -I$(HDR_DIR) -I$(INC_DIR)
+AFLAGS ?= -rc
+
 .PHONY: all bonus clean fclean re
 
 all: $(NAME)
@@ -73,13 +78,12 @@ bonus: all
 $(NAME): $(addprefix $(OBJ_DIR),$(OBJ_FILES))
 	@ar $(AFLAGS) $@ $^
 
-$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(addprefix $(HDR_DIR),$(HDR_FILES))
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c $(addprefix $(HDR_DIR),$(HDR_FILES)) $(addprefix $(INC_DIR),$(INC_FILES))
 	@mkdir -p $(OBJ_DIR)
-	@$(CC) $(CFLAGS) -I$(HDR_DIR) $< -c -o $@
+	@$(CC) $(CFLAGS) $< -c -o $@
 
 clean:
-	@rm -f *.o
-	@rm -f *.gch
+	@rm -f $(OBJ_DIR)*.o
 
 fclean: clean
 	@rm -f $(NAME)
