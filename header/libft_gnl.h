@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   libft_gnl.h                                        :+:    :+:            */
+/*   libft_gnl.h                                    :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/28 10:17:52 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/11/04 12:17:40 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/01/30 16:05:58 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_GNL_H
 # define LIBFT_GNL_H
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4096
+# ifndef GNL_BUFFER_SIZE
+#  define GNL_BUFFER_SIZE 4096
 # endif
 
 # include <stddef.h>
-# define NEWLINE_CHAR '\n'
-# define MAX_FILE_DESCRIPTOR 2048
+# include <sys/types.h>
 
-typedef struct s_buffer
-{
-	char	*content[BUFFER_SIZE + 1];
-	int		size;
-}	t_buffer;
+# define GNL_DELIMITER '\n'
+# define MAX_FILE_DESCRIPTOR 256
 
-void	*ft_realloc(void *ptr, size_t srcsize, size_t dstsize);
-char	*ft_strnchain(char *s1, char const *s2, size_t n);
-char	*buffmove(char *buffer, char *start, size_t len);
-char	*get_next_line(int fd);
+typedef struct s_gnl_buffer {
+	ssize_t	size;
+	char	data[GNL_BUFFER_SIZE];
+}	t_gnl_buffer;
+
+int		gnl_buffer_init(t_gnl_buffer **buffers, int fd);
+void	gnl_buffer_destroy(t_gnl_buffer **buffer);
+void	gnl_buffer_move(t_gnl_buffer *buffer, size_t start);
+int		gnl_buffer_scan(t_gnl_buffer *buffer, size_t *i);
+int		gnl_line_append(char **line, t_gnl_buffer *buffer, size_t end);
+void	*gnl_realloc(void *ptr, size_t srcsize, size_t dstsize);
 
 #endif

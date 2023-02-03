@@ -6,3 +6,6 @@ test/
 
 # Objects
 object/*
+
+# Miscellaneous
+source/.*

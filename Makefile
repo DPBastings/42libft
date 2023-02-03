@@ -57,7 +57,8 @@ SRC_FILES := ft_atoi.c\
 	ft_toupper.c\
 	\
 	gnl.c\
-	gnl_utils.c
+	gnl_utils.c\
+	gnl_utils_buffer.c
 OBJ_FILES := $(SRC_FILES:.c=.o)
 
 SRC_DIR := ./source/
