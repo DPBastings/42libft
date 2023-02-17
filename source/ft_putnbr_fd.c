@@ -13,13 +13,6 @@
 #include "libft.h"
 #include <limits.h>
 
-static int	ft_abs(int n)
-{
-	if (n < 0)
-		return (-n);
-	return (n);
-}
-
 void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == INT_MIN)
