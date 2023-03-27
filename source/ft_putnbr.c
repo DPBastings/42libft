@@ -1,17 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putnbr_fd.c                                     :+:    :+:            */
+/*   ft_putnbr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 15:11:17 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 12:01:40 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/27 16:30:18 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_stdio.h"
 #include <limits.h>
+#include <unistd.h>
+
+void	ft_putnbr(int n)
+{
+	ft_putnbr_fd(n, STDOUT_FILENO);
+}
 
 void	ft_putnbr_fd(int n, int fd)
 {

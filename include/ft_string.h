@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   ft_string.h                                        :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: dbasting <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/03/27 16:31:22 by dbasting      #+#    #+#                 */
+/*   Updated: 2023/03/27 16:31:34 by dbasting      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FT_STRING_H
 # define FT_STRING_H
 
@@ -23,3 +35,5 @@ size_t	ft_strlen(char const *s);
 char	*ft_strrchr(char const *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+#endif

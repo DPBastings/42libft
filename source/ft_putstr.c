@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_putstr_fd.c                                     :+:    :+:            */
+/*   ft_putstr.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 13:49:40 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/11 15:18:38 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/27 16:29:15 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_stdio.h"
+#include <unistd.h>
+
+void	ft_putstr(char *s)
+{
+	ft_putstr_fd(s, STDOUT_FILENO);
+}
 
 void	ft_putstr_fd(char *s, int fd)
 {
