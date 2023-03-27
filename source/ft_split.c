@@ -6,12 +6,46 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 13:16:23 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 16:50:17 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/27 11:48:43 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 #include <stdlib.h>
+
+static void		*cleanup(char **array, size_t size);
+static size_t	countwords(char const *s, char c);
+static char		*ft_strndup(char const *s1, size_t n);
+static int		isdelimiter(char c, char dl);
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+	size_t	arraysize;
+	size_t	index;
+	size_t	wordlen;
+
+	arraysize = countwords(s, c);
+	array = malloc((arraysize + 1) * sizeof(char *));
+	if (array)
+	{
+		index = 0;
+		wordlen = 0;
+		while (index < arraysize)
+		{
+			wordlen += !isdelimiter(*s, c);
+			if (isdelimiter(*s++, c) && wordlen > 0)
+			{
+				array[index] = ft_strndup(s - wordlen - 1, wordlen);
+				if (!array[index++])
+					return (cleanup(array, index));
+				wordlen = 0;
+			}
+		}
+		array[arraysize] = NULL;
+	}
+	return (array);
+}
 
 static void	*cleanup(char **array, size_t size)
 {
@@ -70,33 +104,4 @@ static char	*ft_strndup(char const *s1, size_t n)
 static int	isdelimiter(char c, char dl)
 {
 	return (c == dl || c == '\0');
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**array;
-	size_t	arraysize;
-	size_t	index;
-	size_t	wordlen;
-
-	arraysize = countwords(s, c);
-	array = malloc((arraysize + 1) * sizeof(char *));
-	if (array)
-	{
-		index = 0;
-		wordlen = 0;
-		while (index < arraysize)
-		{
-			wordlen += !isdelimiter(*s, c);
-			if (isdelimiter(*s++, c) && wordlen > 0)
-			{
-				array[index] = ft_strndup(s - wordlen - 1, wordlen);
-				if (!array[index++])
-					return (cleanup(array, index));
-				wordlen = 0;
-			}
-		}
-		array[arraysize] = NULL;
-	}
-	return (array);
 }
