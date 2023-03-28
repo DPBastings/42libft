@@ -6,14 +6,14 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 17:38:13 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/11/04 13:18:16 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 14:46:29 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 #include <stddef.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(char const *s, int c)
 {	
 	char	character;
 

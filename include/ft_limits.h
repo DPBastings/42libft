@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memcpy.c                                        :+:    :+:            */
+/*   ft_limits.h                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/07 11:03:38 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/28 13:26:56 by dbasting      ########   odam.nl         */
+/*   Created: 2023/03/28 12:03:13 by dbasting      #+#    #+#                 */
+/*   Updated: 2023/03/28 12:08:00 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_string.h"
-#include <stddef.h>
+#ifndef FT_LIMITS_H
+# define FT_LIMITS_H
 
-void	*ft_memcpy(void *dst, void const *src, size_t n)
-{
-	size_t	index;
+# define INT_MAX_DECCHAR	11
+# define UINT_MAX_DECCHAR	10
 
-	index = 0;
-	while (index < n)
-	{
-		((char *)dst)[index] = ((char const *)src)[index];
-		index++;
-	}
-	return (dst);
-}
+#endif

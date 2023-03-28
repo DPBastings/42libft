@@ -6,31 +6,32 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 12:09:50 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/18 12:56:54 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 13:30:05 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, void const *src, size_t len)
 {
-	size_t	index;
+	size_t		index;
+	char		*d;
+	char const	*s;
 
-	if (dst > src)
+	d = (char *)dst;
+	s = (char const *)src;
+	if (d > s)
 	{
 		index = len;
-		while (index > 0)
-		{
-			((char *)dst)[index - 1] = ((char *)src)[index - 1];
-			index--;
-		}
+		while (index--)
+			d[index] = s[index];
 	}
-	if (dst < src)
+	else if (d < s)
 	{
 		index = 0;
 		while (index < len)
 		{
-			((char *)dst)[index] = ((char *)src)[index];
+			d[index] = s[index];
 			index++;
 		}
 	}

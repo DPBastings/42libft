@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstmap.c                                        :+:    :+:            */
+/*   list_map.c                                         :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 13:00:17 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/11/04 13:31:09 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:53:51 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list	*list_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*mapping;
 	t_list	*newnode;
@@ -24,14 +24,19 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	while (lst)
 	{
 		newcontent = f(lst->content);
-		newnode = ft_lstnew(newcontent);
+		if (newcontent == NULL)
+		{
+			list_clear(&mapping, del);
+			break ;
+		}
+		newnode = list_new(newcontent);
 		if (newnode == NULL)
 		{
-			ft_lstclear(&mapping, del);
+			list_clear(&mapping, del);
 			del(newcontent);
 			break ;
 		}
-		ft_lstadd_back(&mapping, newnode);
+		list_append(&mapping, newnode);
 		lst = lst->next;
 	}
 	return (mapping);

@@ -6,66 +6,53 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 15:19:59 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 13:28:39 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 13:24:40 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_stdlib.h"
+#include "ft_string.h"
+#include "ft_limits.h"
+
+#include <stdbool.h>
 #include <stddef.h>
 #include <stdlib.h>
 #include <limits.h>
 
-static int	setminus(int n, char *array)
-{
-	if (n < 0)
-	{
-		array[0] = '-';
-		return (-n);
-	}
-	return (n);
-}
-
-static size_t	digitcount(int n)
-{
-	size_t	digits;
-
-	digits = 1;
-	if (n < 0)
-	{
-		n = -n;
-		digits++;
-	}
-	while (n > 9)
-	{
-		n /= 10;
-		digits++;
-	}
-	return (digits);
-}
+static bool	itoa_abs(int *n);
 
 char	*ft_itoa(int n)
 {
-	size_t	index;
-	char	*string;
+	size_t	i;
+	char	buffer[INT_MAX_DECCHAR + 1];
+	char	sign;
 
 	if (n == INT_MIN)
-		string = ft_strdup("-2147483648");
+		return (ft_strdup("-2147483648"));
 	else if (n == 0)
-		string = ft_strdup("0");
+		return (ft_strdup("0"));
+	if (itoa_abs(&n))
+		sign = '-';
 	else
+		sign = '\0';
+	i = 0;
+	while (n)
 	{
-		index = digitcount(n);
-		string = malloc((index + 1) * sizeof(char));
-		if (string)
-		{
-			string[index--] = '\0';
-			n = setminus(n, string);
-			while (n)
-			{
-				string[index--] = '0' + n % 10;
-				n /= 10;
-			}
-		}
+		buffer[i++] = '0' + n % 10;
+		n /= 10;
 	}
-	return (string);
+	buffer[i++] = sign;
+	buffer[i] = '\0';
+	ft_strrev(buffer);
+	return (ft_strdup(buffer));
+}
+
+static bool itoa_abs(int *n)
+{
+	if (*n < 0)
+	{
+		*n *= -1;
+		return (true);
+	}
+	return (false);
 }

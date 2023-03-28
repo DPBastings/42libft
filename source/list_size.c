@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstsize.c                                       :+:    :+:            */
+/*   list_size.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 12:22:52 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/17 16:52:24 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:51:50 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
+#include <stddef.h>
 
-int	ft_lstsize(t_list *lst)
+size_t	list_size(t_list *lst)
 {
-	int		counter;
+	size_t	size;
 
-	counter = 0;
+	size = 0;
 	while (lst)
 	{
 		lst = lst->next;
-		counter++;
+		size++;
 	}
-	return (counter);
+	return (size);
 }

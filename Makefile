@@ -6,7 +6,7 @@
 #    By: dbasting <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 15:45:11 by dbasting      #+#    #+#                  #
-#    Updated: 2023/03/27 16:26:02 by dbasting      ########   odam.nl          #
+#    Updated: 2023/03/28 11:41:46 by dbasting      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,15 +21,15 @@ SRC_FILES	:= ft_isalnum.c\
 			ft_tolower.c\
 			ft_toupper.c\
 			\
-			ft_list_append.c\
-			ft_list_push.c\
-			ft_list_clear.c\
-			ft_lstdelone.c\
-			ft_list_iter.c \
-			ft_list_last.c\
-			ft_list_map.c\
-			ft_list_new.c\
-			ft_list_size.c\
+			list_append.c\
+			list_clear.c\
+			list_delete.c\
+			list_iter.c \
+			list_last.c\
+			list_map.c\
+			list_new.c\
+			list_push.c\
+			list_size.c\
 			\
 			ft_abs.c\
 			ft_dblmax.c\
@@ -90,12 +90,9 @@ INC_DIR		:= ./include/
 CFLAGS		?= -Wall -Wextra -Werror -I$(HDR_DIR) -I$(INC_DIR)
 AFLAGS		?= -rc
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re
 
 all: $(NAME)
-
-bonus: all
-	@echo "Bonus is basis, vrind."
 
 $(NAME): $(addprefix $(OBJ_DIR),$(OBJ_FILES))
 	@ar $(AFLAGS) $@ $^

@@ -6,11 +6,12 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/11 15:11:17 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/27 16:30:18 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 14:45:43 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stdio.h"
+
 #include <limits.h>
 #include <unistd.h>
 
@@ -28,7 +29,7 @@ void	ft_putnbr_fd(int n, int fd)
 		if (n < 0)
 		{
 			ft_putchar_fd('-', fd);
-			n = ft_abs(n);
+			n *= -1;
 		}
 		if (n > 9)
 			ft_putnbr_fd(n / 10, fd);

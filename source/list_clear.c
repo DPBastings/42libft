@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_lstclear.c                                      :+:    :+:            */
+/*   list_clear.c                                       :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/17 12:51:57 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/21 13:47:46 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:53:14 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "ft_list.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	list_clear(t_list **lst, void (*del)(void *))
 {	
 	t_list	*previous;
 
@@ -21,6 +20,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		previous = *lst;
 		*lst = (*lst)->next;
-		ft_lstdelone(previous, del);
+		list_delete(previous, del);
 	}
 }

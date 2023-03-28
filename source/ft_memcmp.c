@@ -6,28 +6,28 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/07 11:50:44 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 16:15:59 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 13:26:33 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(void const *s1, void const *s2, size_t n)
 {
 	size_t				index;
-	const unsigned char	*b1;
-	const unsigned char	*b2;
+	unsigned char const	*b1;
+	unsigned char const	*b2;
 
 	index = 0;
-	b1 = (const unsigned char *)s1;
-	b2 = (const unsigned char *)s2;
+	b1 = (unsigned char const *)s1;
+	b2 = (unsigned char const *)s2;
 	while (index < n)
 	{
-		if ((unsigned char) b1[index] != (unsigned char) b2[index])
+		if (b1[index] != b2[index])
 			break ;
 		index++;
 	}
 	if (index < n)
-		return ((unsigned char) b1[index] - (unsigned char) b2[index]);
+		return (b1[index] - b2[index]);
 	return (0);
 }

@@ -6,11 +6,11 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 15:08:01 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/18 12:36:16 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:58:18 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_ctype.h"
 
 int	ft_isdigit(int c)
 {

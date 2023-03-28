@@ -6,14 +6,14 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/11/08 11:44:16 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/01/16 15:32:19 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:39:14 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MISC_H
 # define MISC_H
 
-# include "token.h"
+# include "libft_printf.h"
 # include <stddef.h>
 
 int		misc_atoi(char const **str);

@@ -6,9 +6,11 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 15:03:14 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 13:45:03 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:58:06 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_ctype.h"
 
 int	ft_isalpha(int c)
 {

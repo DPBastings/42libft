@@ -6,18 +6,12 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/03 17:22:39 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 10:56:05 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 11:54:58 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	ft_isspace(int c)
-{
-	if ((c >= '\t' && c <= '\r') || c == ' ')
-		return (c);
-	return (0);
-}
+#include "ft_stdio.h"
+#include "ft_ctype.h"
 
 int	ft_atoi(const char *str)
 {

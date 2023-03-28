@@ -6,11 +6,11 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 16:35:41 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 11:47:39 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 14:49:31 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_string.h"
 #include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
