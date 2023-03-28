@@ -6,7 +6,7 @@
 #    By: dbasting <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 15:45:11 by dbasting      #+#    #+#                  #
-#    Updated: 2023/03/28 11:41:46 by dbasting      ########   odam.nl          #
+#    Updated: 2023/03/28 16:54:42 by dbasting      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,6 +69,7 @@ SRC_FILES	:= ft_isalnum.c\
 			ft_strncmp.c\
 			ft_strnstr.c\
 			ft_strrchr.c\
+			ft_strrev.c\
 			ft_strtrim.c\
 			ft_substr.c
 

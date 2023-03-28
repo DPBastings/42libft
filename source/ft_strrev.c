@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_calloc.c                                        :+:    :+:            */
+/*   ft_strrev.c                                        :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2022/10/07 12:31:40 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/28 16:47:59 by dbasting      ########   odam.nl         */
+/*   Created: 2023/03/28 16:49:36 by dbasting      #+#    #+#                 */
+/*   Updated: 2023/03/28 16:54:07 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stdlib.h"
 #include "ft_string.h"
-
 #include <stddef.h>
-#include <stdlib.h>
 
-void	*ft_calloc(size_t count, size_t size)
+char	*ft_strrev(char *s)
 {
-	char	*memory;
+	size_t	f;
+	size_t	b;
+	char	tmp;
 
-	memory = malloc(count * size);
-	if (memory)
-		ft_bzero(memory, count * size);
-	return (memory);
+	f = 0;
+	b = ft_strlen(s);
+	while (f < --b)
+	{
+		tmp = s[b];
+		s[b] = s[f];
+		s[f] = tmp;
+		f++;
+	}
+	return (s);
 }

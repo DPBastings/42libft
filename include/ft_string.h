@@ -6,7 +6,7 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 16:31:22 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/27 16:31:34 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/03/28 16:54:09 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		ft_strncmp(char const *s1, char const *s2, size_t n);
 char	*ft_strnstr(char const *haystack, char const *needle, size_t len);
 size_t	ft_strlcpy(char *dst, char const *src, size_t dstsize);
 size_t	ft_strlen(char const *s);
+char	*ft_strrev(char *s);
 char	*ft_strrchr(char const *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
