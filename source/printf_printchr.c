@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
-#include "token.h"
+#include "libft_printf.h"
 #include <stdarg.h>
-#include <unistd.h>
 
 void	printpercent(t_carriage *carriage, t_token *token, va_list ap)
 {

@@ -16,6 +16,14 @@
 # include <stdarg.h>
 # include <sys/types.h>
 
+# define BIN_DIGITS		"01"
+# define OCT_DIGITS		"01234567"
+# define DEC_DIGITS		"0123456789"
+# define HEX_DIGITS_U	"0123456789ABCDEF"
+# define HEX_DIGITS_L	"0123456789abcdef"
+
+# define NULL_STR		"(null)"
+
 /* Carriage struct.
  * @param print		Pointer to the printer function.
  * @param printed	The number of characters printed so far.
@@ -28,8 +36,6 @@ typedef struct s_carriage
 	ssize_t	printed;
 	long	paper;
 }	t_carriage;
-
-typedef void	(*t_printer)(t_carriage *, t_token *, va_list ap);
 
 /* Token struct
  * @param flags		The flags set on this token.
@@ -44,6 +50,8 @@ typedef struct s_token
 	unsigned char	flags;
 	unsigned char	specifier;
 }	t_token;
+
+typedef void	(*t_printer)(t_carriage *, t_token *, va_list ap);
 
 # define FLAGS 				"#0- +"
 # define FLAG_ALTERNATIVE	1
@@ -104,5 +112,11 @@ void	printptr(t_carriage *carriage, t_token *token, va_list ap);
 void	printstr(t_carriage *carriage, t_token *token, va_list ap);
 void	printstrconst(t_carriage *carriage, t_token *token, char *str);
 void	printuns(t_carriage *carriage, t_token *token, va_list ap);
+
+/* Helper functions/
+ */
+int		printf_atoi(char const **str);
+char	*printf_itostr(unsigned long number, t_token *token,
+			char const *digits);
 
 #endif

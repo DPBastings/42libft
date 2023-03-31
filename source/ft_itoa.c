@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	return (ft_strdup(buffer));
 }
 
-static bool itoa_abs(int *n)
+static bool	itoa_abs(int *n)
 {
 	if (*n < 0)
 	{

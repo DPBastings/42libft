@@ -25,16 +25,12 @@ t_list	*list_map(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		newcontent = f(lst->content);
 		if (newcontent == NULL)
-		{
-			list_clear(&mapping, del);
-			break ;
-		}
+			return (list_clear(&mapping, del), NULL);
 		newnode = list_new(newcontent);
 		if (newnode == NULL)
 		{
-			list_clear(&mapping, del);
 			del(newcontent);
-			break ;
+			return (list_clear(&mapping, del), NULL);
 		}
 		list_append(&mapping, newnode);
 		lst = lst->next;

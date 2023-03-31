@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
-#include "misc.h"
-#include "token.h"
+#include "libft_printf.h"
+#include "ft_string.h"
 
 static size_t	truncate(char const *str, t_token *token)
 {
 	size_t	len;
 
-	len = misc_strlen(str);
+	len = ft_strlen(str);
 	if (token->precision == -1)
 		return (len);
 	if (len > (size_t) token->precision)
@@ -42,7 +41,7 @@ void	printstr(t_carriage *carriage, t_token *token, va_list ap)
 
 	str = va_arg(ap, char *);
 	if (str == NULL)
-		printstrconst(carriage, token, "(null)");
+		printstrconst(carriage, token, NULL_STR);
 	else
 		printstrconst(carriage, token, str);
 }

@@ -10,14 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "token.h"
-#include "misc.h"
+#include "libft_printf.h"
+
+#include "ft_stdlib.h"
+#include "ft_string.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static void	parse_flags(t_token *token, char const **format)
 {
-	while (misc_strchr(FLAGS, **format))
+	while (ft_strchr(FLAGS, **format))
 	{
 		if (**format == '#')
 			set_flag(token, FLAG_ALTERNATIVE);
@@ -35,7 +36,7 @@ static void	parse_flags(t_token *token, char const **format)
 
 static void	parse_field_width(t_token *token, char const **format)
 {
-	token->field_width = misc_atoi(format);
+	token->field_width = printf_atoi(format);
 }
 
 static void	parse_precision(t_token *token, char const **format)
@@ -44,7 +45,7 @@ static void	parse_precision(t_token *token, char const **format)
 	if (**format == '.')
 	{
 		(*format)++;
-		token->precision = misc_atoi(format);
+		token->precision = printf_atoi(format);
 	}
 }
 
@@ -52,7 +53,7 @@ static int	parse_specifier(t_token *token, char const **format)
 {
 	char	*found;
 
-	found = misc_strchr(SPECIFIERS, **format);
+	found = ft_strchr(SPECIFIERS, **format);
 	if (found)
 	{
 		token->specifier = 1 + found - SPECIFIERS;
@@ -69,7 +70,7 @@ t_token	*parse_conversion(char const **format)
 
 	(*format)++;
 	start = *format;
-	token = misc_calloc(1, sizeof(t_token));
+	token = ft_calloc(1, sizeof(t_token));
 	if (token == NULL)
 		return (NULL);
 	parse_flags(token, format);

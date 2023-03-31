@@ -46,6 +46,19 @@ SRC_FILES	:= ft_isalnum.c\
 			ft_putendl.c\
 			ft_putnbr.c\
 			ft_putstr.c\
+			ft_printf.c\
+			printf_carriage.c\
+			printf_padding.c\
+			printf_parser.c\
+			printf_parser_conversion.c\
+			printf_printchr.c\
+			printf_printdec.c\
+			printf_printhex.c\
+			printf_printlit.c\
+			printf_printoct.c\
+			printf_printstr.c\
+			printf_token.c\
+			printf_utils.c\
 			\
 			ft_atoi.c\
 			ft_calloc.c\
