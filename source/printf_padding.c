@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   padding.c                                          :+:    :+:            */
+/*   printf_padding.c                                   :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
@@ -10,28 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
-#include "token.h"
-#include "misc.h"
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft_printf.h"
+#include "ft_string.h"
 
 static void	print_padding(t_carriage *carriage, t_token *token, size_t len)
 {
-	char	*padding;
+	char	chr;
 
-	padding = malloc(len);
-	if (padding == NULL)
-	{
-		carriage->printed = -1;
-		return ;
-	}
 	if (has_flag(token, FLAG_ZEROPADDING))
-		misc_memset(padding, '0', len);
+		chr = '0';
 	else
-		misc_memset(padding, ' ', len);
-	carriage->print(carriage, padding, len);
-	free(padding);
+		chr = ' ';
+	while (len--)
+		carriage->print(carriage, &chr, 1);
 }
 
 static void	pad(t_carriage *carriage, t_token *token, size_t len)
@@ -62,24 +53,24 @@ char	*get_prefix(t_token *token, long value)
 	if (token->specifier == SPEC_DEC || token->specifier == SPEC_INT)
 	{
 		if (value < 0)
-			prefix = misc_strdup("-");
+			prefix = ft_strdup("-");
 		else if (has_flag(token, FLAG_SIGNED))
-			prefix = misc_strdup("+");
+			prefix = ft_strdup("+");
 		else if (has_flag(token, FLAG_SPACE))
-			prefix = misc_strdup(" ");
+			prefix = ft_strdup(" ");
 		else
-			prefix = misc_strdup("");
+			prefix = ft_strdup("");
 	}
 	else if (has_flag(token, FLAG_ALTERNATIVE) && value != 0)
 	{
 		if (token->specifier == SPEC_HEXLOW)
-			prefix = misc_strdup("0x");
+			prefix = ft_strdup("0x");
 		else if (token->specifier == SPEC_HEXUPP)
-			prefix = misc_strdup("0X");
+			prefix = ft_strdup("0X");
 		else
-			prefix = misc_strdup("");
+			prefix = ft_strdup("");
 	}
 	else
-		prefix = misc_strdup("");
+		prefix = ft_strdup("");
 	return (prefix);
 }

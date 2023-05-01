@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   carriage.c                                         :+:    :+:            */
+/*   printf_carriage.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
+#include "libft_printf.h"
 #include <stddef.h>
 #include <unistd.h>
 
@@ -18,7 +18,7 @@ void	print(t_carriage *self, char *str, size_t len)
 {
 	if (self->printed != -1 && str)
 	{
-		if (write(self->paper, str++, len) != -1)
+		if (write(self->paper, str, len) != -1)
 			self->printed += len;
 		else
 			self->printed = -1;

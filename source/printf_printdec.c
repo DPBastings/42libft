@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
-#include "misc.h"
+#include "libft_printf.h"
+#include "ft_string.h"
 #include <stdarg.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -21,8 +21,8 @@ void	printnum(t_carriage *carriage, t_token *token, char *str, char *prfx)
 	size_t	string_len;
 	size_t	prefix_len;
 
-	string_len = misc_strlen(str);
-	prefix_len = misc_strlen(prfx);
+	string_len = ft_strlen(str);
+	prefix_len = ft_strlen(prfx);
 	if (has_flag(token, FLAG_ZEROPADDING))
 		carriage->print(carriage, prfx, prefix_len);
 	pad_left(carriage, token, prefix_len + string_len);
@@ -42,13 +42,13 @@ void	printdec(t_carriage *carriage, t_token *token, va_list ap)
 
 	number = va_arg(ap, int);
 	prefix = get_prefix(token, number);
-	if (number == -2147483648)
-		string = misc_itostr(2147483648, token, "0123456789");
+	if (number == INT_MIN)
+		string = printf_itostr(2147483648, token, DEC_DIGITS);
 	else
 	{
 		if (number < 0)
 			number *= -1;
-		string = misc_itostr(number, token, "0123456789");
+		string = printf_itostr(number, token, DEC_DIGITS);
 	}
 	printnum(carriage, token, string, prefix);
 }
@@ -61,6 +61,6 @@ void	printuns(t_carriage *carriage, t_token *token, va_list ap)
 
 	number = va_arg(ap, unsigned int);
 	prefix = get_prefix(token, number);
-	string = misc_itostr(number, token, "0123456789");
+	string = printf_itostr(number, token, DEC_DIGITS);
 	printnum(carriage, token, string, prefix);
 }

@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "token.h"
-#include "misc.h"
+#include "libft_printf.h"
+#include "ft_stdlib.h"
+
 #include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
 
 t_token	*ignore_flags(t_token *token)
 {
@@ -31,7 +30,7 @@ t_token	*parse_literal(char const **format)
 {
 	t_token	*new;
 
-	new = misc_calloc(1, sizeof(t_token));
+	new = ft_calloc(1, sizeof(t_token));
 	if (new == NULL)
 		return (NULL);
 	new->flags = **format;

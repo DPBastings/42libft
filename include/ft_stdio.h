@@ -18,11 +18,11 @@
 char	*ft_getline(int fd);
 
 int		ft_printf(char const *format, ...);
-int		ft_dprintf(char const *format, ...);
-int		ft_sprintf(char const *format, ...);
+int		ft_dprintf(int fd, char const *format, ...);
+int		ft_sprintf(char *str, char const *format, ...);
 int		ft_vprintf(char const *format, va_list ap);
-int		ft_vdprintf(char const *format, va_list ap);
-int		ft_vsprintf(char const *format, va_list ap);
+int		ft_vdprintf(int fd, char const *format, va_list ap);
+int		ft_vsprintf(char *str, char const *format, va_list ap);
 
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);

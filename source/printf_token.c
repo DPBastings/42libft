@@ -10,7 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "token.h"
+#include "libft_printf.h"
+#include <stddef.h>
 
 int	has_flag(t_token *token, int flag)
 {
@@ -42,8 +43,9 @@ int	expand_token(t_carriage *carriage, t_token *token, va_list ap)
 		printlit, printdec, printdec, printoct,
 		printuns, printhex, printhex, printchr,
 		printstr, printptr, printpercent};
+
 	if (token == NULL)
 		return (0);
-	g_printdict[token->specifier](carriage, token, ap);
+	lut_printer[token->specifier](carriage, token, ap);
 	return (1);
 }

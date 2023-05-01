@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "carriage.h"
-#include "misc.h"
+#include "libft_printf.h"
+#include "ft_string.h"
 #include <stdarg.h>
 
 void	printhex(t_carriage *carriage, t_token *token, va_list ap)
@@ -23,9 +23,9 @@ void	printhex(t_carriage *carriage, t_token *token, va_list ap)
 	number = va_arg(ap, unsigned int);
 	prefix = get_prefix(token, number);
 	if (token->specifier == SPEC_HEXUPP)
-		string = misc_itostr(number, token, "0123456789ABCDEF");
+		string = printf_itostr(number, token, HEX_DIGITS_U);
 	else
-		string = misc_itostr(number, token, "0123456789abcdef");
+		string = printf_itostr(number, token, HEX_DIGITS_L);
 	printnum(carriage, token, string, prefix);
 }
 
@@ -36,7 +36,7 @@ void	printptr(t_carriage *carriage, t_token *token, va_list ap)
 	char			*prefix;
 
 	pointer = (unsigned long) va_arg(ap, void *);
-	prefix = misc_strdup("0x");
-	string = misc_itostr(pointer, token, "0123456789abcdef");
+	prefix = ft_strdup("0x");
+	string = printf_itostr(pointer, token, HEX_DIGITS_L);
 	printnum(carriage, token, string, prefix);
 }
