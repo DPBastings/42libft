@@ -6,7 +6,7 @@
 
 static inline void	slot_insert(t_hashtable *table, t_hash_slot *slot);
 
-int	hashtable_insert(t_hashtable *table, char const *key, void *value)
+int	hashtable_update(t_hashtable *table, char const *key, void *value, void **old_value)
 {
 	t_hash_slot	*slot;
 
@@ -18,6 +18,7 @@ int	hashtable_insert(t_hashtable *table, char const *key, void *value)
 		return (free(slot), HASH_FAILURE);
 	slot->value = value;
 	slot->next = NULL;
+	*old_value = hashtable_pop(table, key);
 	slot_insert(table, slot);
 	return (HASH_SUCCESS);
 }

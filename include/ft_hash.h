@@ -33,8 +33,9 @@ typedef struct s_hashtable {
 }	t_hashtable;
 
 t_hashtable	*hashtable_init(size_t base_size, t_hashf hashf);
-int			hashtable_insert(t_hashtable *table, char const *key, void *value);
-void		*hashtable_lookup(t_hashtable *table, char const *key);
+int			hashtable_update(t_hashtable *table, char const *key, void *value,
+				void **old_value);
+void		*hashtable_search(t_hashtable *table, char const *key);
 void		*hashtable_pop(t_hashtable *table, char const *key);
 void		hashtable_destroy(t_hashtable **hashtable, void (*del)(void *));
 

@@ -23,9 +23,9 @@ SRC_FILES	:= ft_ctype/ft_isalnum.c\
 			\
 			ft_hash/ft_hash.c\
 			ft_hash/hashtable.c\
-			ft_hash/hashtable_insert.c\
-			ft_hash/hashtable_lookup.c\
 			ft_hash/hashtable_pop.c\
+			ft_hash/hashtable_search.c\
+			ft_hash/hashtable_update.c\
 			\
 			ft_list/list_append.c\
 			ft_list/list_clear.c\

@@ -3,7 +3,7 @@
 #include "ft_string.h"
 #include <stddef.h>
 
-void	*hashtable_lookup(t_hashtable *table, char const *key)
+void	*hashtable_search(t_hashtable *table, char const *key)
 {
 	size_t		i;
 	t_hash_slot	*slot;
