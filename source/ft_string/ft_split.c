@@ -13,10 +13,10 @@
 #include "ft_string.h"
 #include <stdlib.h>
 
-static void		*cleanup(char **array, size_t size);
-static size_t	countwords(char const *s, char c);
-static char		*ft_strndup(char const *s1, size_t n);
-static int		isdelimiter(char c, char dl);
+static inline void	*cleanup(char **array, size_t size);
+static size_t		countwords(char const *s, char c);
+static char			*ft_strndup(char const *s1, size_t n);
+static inline int	isdelimiter(char c, char dl);
 
 char	**ft_split(char const *s, char c)
 {
@@ -47,7 +47,7 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-static void	*cleanup(char **array, size_t size)
+static inline void	*cleanup(char **array, size_t size)
 {
 	size_t	index;
 
@@ -101,7 +101,7 @@ static char	*ft_strndup(char const *s1, size_t n)
 	return (string);
 }
 
-static int	isdelimiter(char c, char dl)
+static inline int	isdelimiter(char c, char dl)
 {
 	return (c == dl || c == '\0');
 }

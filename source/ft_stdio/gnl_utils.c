@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft_gnl.h"
-#include "libft.h"
+#include "ft_string.h"
 #include <stddef.h>
 #include <stdlib.h>
 
