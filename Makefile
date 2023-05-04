@@ -93,8 +93,8 @@ SRC_FILES	:= ft_ctype/ft_isalnum.c\
 			ft_string/ft_substr.c
 
 OBJ_FILES	:= $(patsubst %.c,%.o,$(SRC_FILES))
-HDR_FILES	:= libft_gnl.h\
-			libft_printf.h
+HDR_FILES	:= ft_stdio/libft_gnl.h\
+			ft_stdio/libft_printf.h
 INC_FILES	:= libft.h\
 			ft_ctype.h\
 			ft_hash.h\
@@ -113,10 +113,10 @@ SRC_SUBDIRS	:= ft_ctype/\
 			ft_string/
 OBJ_DIR		:= ./object/
 OBJ_SUBDIRS	:= $(SRC_SUBDIRS)
-HDR_DIR		:= ./header/
+HDR_DIR		:= $(SRC_DIR)
 INC_DIR		:= ./include/
 
-CFLAGS		?= -Wall -Wextra -Werror -I$(HDR_DIR) -I$(INC_DIR)
+CFLAGS		?= -Wall -Wextra -Werror -I$(INC_DIR)
 AFLAGS		?= -rc
 
 .PHONY: all clean fclean re
