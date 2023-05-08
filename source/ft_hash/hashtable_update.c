@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   hashtable_update.c                                 :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: dbasting <marvin@codam.nl>                   +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2023/05/08 12:27:33 by dbasting      #+#    #+#                 */
+/*   Updated: 2023/05/08 12:27:42 by dbasting      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_hash.h"
 
 #include "ft_string.h"
@@ -6,7 +18,8 @@
 
 static inline void	slot_insert(t_hashtable *table, t_hash_slot *slot);
 
-int	hashtable_update(t_hashtable *table, char const *key, void *value, void **old_value)
+int	hashtable_update(t_hashtable *table, char const *key, void *value,
+						void **old_value)
 {
 	t_hash_slot	*slot;
 

@@ -6,17 +6,17 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/10 13:16:23 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/27 11:48:43 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/05/08 12:26:40 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 #include <stdlib.h>
 
+static size_t	countwords(char const *s, char c);
+static char		*ft_strndup(char const *s1, size_t n);
 static inline void	*cleanup(char **array, size_t size);
-static size_t		countwords(char const *s, char c);
-static char			*ft_strndup(char const *s1, size_t n);
-static inline int	isdelimiter(char c, char dl);
+static inline int		isdelimiter(char c, char dl);
 
 char	**ft_split(char const *s, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/27 11:34:11 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/27 11:34:14 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/05/08 12:28:02 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	ft_isprint(int c);
  * @return	0 if false, 1 if true.
  */
 int	ft_isspace(int c);
-
 
 /* ft_tolower -	Convert an uppercase letter to lowercase.
  * @param c	The character to be converted.
