@@ -6,7 +6,7 @@
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/28 10:17:52 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/01/30 16:05:58 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/08/28 13:56:54 by dbasting      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define LIBFT_GNL_H
 
 # ifndef GNL_BUFFER_SIZE
-#  define GNL_BUFFER_SIZE 4096
+#  define GNL_BUFFER_SIZE		4096
 # endif
 
 # include <stddef.h>
 # include <sys/types.h>
 
-# define GNL_DELIMITER '\n'
-# define MAX_FILE_DESCRIPTOR 256
+# define GNL_DELIMITER			0xA
+# define MAX_FILE_DESCRIPTOR	256
 
 typedef struct s_gnl_buffer {
 	ssize_t	size;
