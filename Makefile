@@ -6,7 +6,7 @@
 #    By: dbasting <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 15:45:11 by dbasting      #+#    #+#                  #
-#    Updated: 2023/09/11 13:41:17 by dbasting         ###   ########.fr        #
+#    Updated: 2023/09/11 14:50:58 by dbasting         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -121,7 +121,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c $(addprefix $(HDR_DIR),$(HDR_FILES)) $(addprefix $(
 	@$(CC) $(CFLAGS) $< -c -o $@
 
 clean:
-	rm -f $(addprefix $(OBJ_DIR),$(OBJ_FILES))
+	@rm -f $(addprefix $(OBJ_DIR),$(OBJ_FILES))
 
 fclean: clean
 	@rm -f $(NAME)
