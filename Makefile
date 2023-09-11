@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                      +:+                     #
 #    By: dbasting <marvin@codam.nl>                   +#+                      #
 #                                                    +#+                       #
 #    Created: 2022/10/04 15:45:11 by dbasting      #+#    #+#                  #
-#    Updated: 2023/09/08 12:43:10 by dbasting      ########   odam.nl          #
+#    Updated: 2023/09/11 13:41:17 by dbasting         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,14 +36,6 @@ SRC_FILES	:= ft_ctype/ft_isalnum.c\
 			ft_list/list_new.c\
 			ft_list/list_push.c\
 			ft_list/list_size.c\
-			\
-			ft_math/ft_abs.c\
-			ft_math/ft_dblmax.c\
-			ft_math/ft_dblmin.c\
-			ft_math/ft_intmax.c\
-			ft_math/ft_intmin.c\
-			ft_math/ft_uintmax.c\
-			ft_math/ft_uintmin.c\
 			\
 			ft_stdio/gnl.c\
 			ft_stdio/gnl_utils.c\
@@ -99,7 +91,6 @@ INC_FILES	:= libft.h\
 			ft_ctype.h\
 			ft_hash.h\
 			ft_list.h\
-			ft_math.h\
 			ft_stdio.h\
 			ft_stdlib.h\
 			ft_string.h
@@ -107,7 +98,6 @@ SRC_DIR		:= ./source/
 SRC_SUBDIRS	:= ft_ctype/\
 			ft_hash/\
 			ft_list/\
-			ft_math/\
 			ft_stdio/\
 			ft_stdlib/\
 			ft_string/
