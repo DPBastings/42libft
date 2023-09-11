@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_dblmin.c                                        :+:    :+:            */
+/*   ft_dblmin.c                                        :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/03/24 15:09:43 by dbasting      #+#    #+#                 */
-/*   Updated: 2023/03/24 15:09:45 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/09/11 11:36:46 by dbasting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-#include <float.h>
 #include <limits.h>
+#include <math.h>
 #include <stdarg.h>
 #include <stddef.h>
 

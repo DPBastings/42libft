@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_math.h                                          :+:    :+:            */
+/*   ft_math.h                                          :+:      :+:    :+:   */
 /*                                                     +:+                    */
 /*   By: dbasting <marvin@codam.nl>                   +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2022/10/04 15:27:24 by dbasting      #+#    #+#                 */
-/*   Updated: 2022/10/24 16:50:06 by dbasting      ########   odam.nl         */
+/*   Updated: 2023/09/11 11:37:01 by dbasting         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
 
-# include <float.h>
+# include <math.h>
 # include <stdarg.h>
 # include <stddef.h>
 
