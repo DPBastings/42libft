@@ -9,4 +9,5 @@ object/*
 
 # Miscellaneous
 source/.*
-.DS_Store
+*.backup
+
