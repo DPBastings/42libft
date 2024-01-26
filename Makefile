@@ -82,7 +82,8 @@ SRC_FILES	:= ft_ctype/ft_isalnum.c\
 			ft_string/ft_strrchr.c\
 			ft_string/ft_strrev.c\
 			ft_string/ft_strtrim.c\
-			ft_string/ft_substr.c
+			ft_string/ft_substr.c\
+			ft_string/ft_wordlen.c
 
 OBJ_FILES	:= $(patsubst %.c,%.o,$(SRC_FILES))
 HDR_FILES	:= ft_stdio/libft_gnl.h\
